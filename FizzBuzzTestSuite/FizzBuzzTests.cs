@@ -71,7 +71,7 @@ namespace FizzBuzzTestSuite
         [Test]
         public void TestFizzBuzz30()
         {
-            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 15 };
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 30 };
             string last = GetLastFizzBuzz(fb);
             Assert.AreEqual(last, "30 FizzBuzz");
         }
