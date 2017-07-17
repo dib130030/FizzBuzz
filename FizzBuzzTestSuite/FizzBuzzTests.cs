@@ -77,6 +77,30 @@ namespace FizzBuzzTestSuite
         }
 
         [Test]
+        public void TestFizzBuzzP5()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 5, FizzNum = 5, BuzzNum = 7, FizzStr = "Fives", BuzzStr = "Sevens" };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, "5 Fives");
+        }
+
+        [Test]
+        public void TestFizzBuzzP7()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 7, FizzNum = 5, BuzzNum = 7, FizzStr = "Fives", BuzzStr = "Sevens" };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, "7 Sevens");
+        }
+
+        [Test]
+        public void TestFizzBuzzP35()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 35, FizzNum = 5, BuzzNum = 7, FizzStr = "Fives", BuzzStr = "Sevens" };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, "35 FivesSevens");
+        }
+
+        [Test]
         public void TestFizzBuzzInvalidUpperBound()
         {
             var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = -1 };
