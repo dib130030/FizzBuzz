@@ -10,16 +10,78 @@ namespace FizzBuzzTestSuite
     [TestFixture]
     public class FizzBuzzTests
     {
-        [Test]
-        public void TestFizzBuzz()
+        static string GetLastFizzBuzz(FizzBuzzLib.FizzBuzzClass fb)
         {
-            var fb = new FizzBuzzLib.FizzBuzzClass(15);
             string last = string.Empty;
             foreach (var line in fb.FizzBuzz())
             {
                 last = line;
             }
+            return last;
+        }
+
+        [Test]
+        public void TestFizzBuzz3()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 3 };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, "3 Fizz");
+        }
+
+        [Test]
+        public void TestFizzBuzz5()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 5 };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, "5 Buzz");
+        }
+
+        [Test]
+        public void TestFizzBuzz14()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 14 };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, "14");
+        }
+
+        [Test]
+        public void TestFizzBuzz15()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 15 };
+            string last = GetLastFizzBuzz(fb);
             Assert.AreEqual(last, "15 FizzBuzz");
+        }
+
+        [Test]
+        public void TestFizzBuzz25()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 25 };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, "25 Buzz");
+        }
+
+        [Test]
+        public void TestFizzBuzz27()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 27 };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, "27 Fizz");
+        }
+
+        [Test]
+        public void TestFizzBuzz30()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = 15 };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, "30 FizzBuzz");
+        }
+
+        [Test]
+        public void TestFizzBuzzInvalidUpperBound()
+        {
+            var fb = new FizzBuzzLib.FizzBuzzClass { UpperBound = -1 };
+            string last = GetLastFizzBuzz(fb);
+            Assert.AreEqual(last, string.Empty);
         }
     }
 }

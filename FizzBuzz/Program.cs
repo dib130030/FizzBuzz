@@ -11,7 +11,7 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            var fb = new FizzBuzzLib.FizzBuzzClass(int.MaxValue);
+            var fb = new FizzBuzzLib.FizzBuzzClass();
             foreach (var line in fb.FizzBuzz())
             {
                 Console.WriteLine(line);

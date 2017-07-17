@@ -8,32 +8,40 @@ namespace FizzBuzzLib
 {
     public class FizzBuzzClass
     {
-        private readonly int _upper;
+        public int UpperBound { get; set; }
+        public int FizzNum { get; set; }
+        public int BuzzNum { get; set; }
+        public string FizzStr { get; set; }
+        public string BuzzStr { get; set; }
 
-        public FizzBuzzClass(int upper)
+        public FizzBuzzClass()
         {
-            _upper = upper;
+            UpperBound = 100;
+            FizzNum = 3;
+            BuzzNum = 5;
+            FizzStr = "Fizz";
+            BuzzStr = "Buzz";
         }
 
         public IEnumerable<string> FizzBuzz()
         {
-            for (int i = 1; i <= _upper; ++i)
+            for (int i = 1; i <= UpperBound; ++i)
             {
-                if (i % 3 == 0 && i % 5 == 0)
+                if (i % FizzNum == 0 && i % BuzzNum == 0)
                 {
-                    yield return (i + " FizzBuzz");
+                    yield return i + " " + FizzStr + BuzzStr;
                 }
-                else if (i % 3 == 0)
+                else if (i % FizzNum == 0)
                 {
-                    yield return (i + " Fizz");
+                    yield return i + " " + FizzStr;
                 }
-                else if (i % 5 == 0)
+                else if (i % BuzzNum == 0)
                 {
-                    yield return (i + " Buzz");
+                    yield return i + " " + BuzzStr;
                 }
                 else
                 {
-                    yield return (i.ToString());
+                    yield return i+"";
                 }
             }
         }
